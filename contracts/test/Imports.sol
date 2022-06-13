@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity 0.8.14;
 
 import "@aragon/os/contracts/acl/ACL.sol";
 import "@aragon/os/contracts/kernel/Kernel.sol";
