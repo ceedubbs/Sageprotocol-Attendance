@@ -14,8 +14,6 @@ contract Attendance is AragonApp {
         initialized();
     }
 
-    function selectAttendees(address participants) external {}
-
     function rewardTokens(address participants, uint256 rewardAmount) internal {
         tokenManager.mint(participants, rewardAmount);
     }
