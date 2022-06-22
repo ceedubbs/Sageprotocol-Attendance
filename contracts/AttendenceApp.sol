@@ -8,13 +8,19 @@ contract Attendance is AragonApp {
     using SafeMath for uint256;
     bytes32 public constant ATTENDANCE_ROLE = keccak256("ATTENDANCE_ROLE");
 
+    string private constant ERROR_ADDRESS_INVALID = "INVALID ADDRESS";
+
     event NewAttendance(address participants, uint256 rewardAmount);
+
 
     function initialize(TokenManager _tokenManager) external onlyInit {
         initialized();
     }
-
-    function rewardTokens(address participants, uint256 rewardAmount) internal {
+    modifier addressValid(address participant) {
+        require(isaddress(participants) == true);
+        _;
+    }
+    function rewardTokens(address participant, uint256 rewardAmount) internal addressValid(address participant) {
         tokenManager.mint(participants, rewardAmount);
     }
 }
