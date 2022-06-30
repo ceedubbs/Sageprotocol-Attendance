@@ -12,7 +12,7 @@ contract Attendance is AragonApp {
 
     event NewAttendance(address participants, uint256 rewardAmount);
 
-
+ 
     function initialize(TokenManager _tokenManager) external onlyInit {
         initialized();
     }
