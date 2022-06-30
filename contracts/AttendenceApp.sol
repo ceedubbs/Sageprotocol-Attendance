@@ -12,15 +12,24 @@ contract Attendance is AragonApp {
 
     event NewAttendance(address participants, uint256 rewardAmount);
 
- 
+<<<<<<< HEAD
+
+=======
+>>>>>>> a4b0d014e93f27cc00e59e48f43a3c2175179a2f
     function initialize(TokenManager _tokenManager) external onlyInit {
         initialized();
     }
+
     modifier addressValid(address participant) {
-        require(isaddress(participants) == true);
+        require(isaddress(participants) == true, ERROR_ADDRESS_INVALID);
         _;
     }
-    function rewardTokens(address participant, uint256 rewardAmount) internal addressValid(address participant) {
+
+    function rewardTokens(address participant, uint256 rewardAmount)
+        internal
+        addressValid(participant)
+        auth(ATTENDANCE_ROLE)
+    {
         tokenManager.mint(participants, rewardAmount);
     }
 }
