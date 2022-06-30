@@ -9,12 +9,15 @@ contract Attendance is AragonApp {
     bytes32 public constant ATTENDANCE_ROLE = keccak256("ATTENDANCE_ROLE");
 
     string private constant ERROR_ADDRESS_INVALID = "INVALID ADDRESS";
+    string private constant ERROR_NOT_MANAGER = "INVALID MANAGER ADDRESS";
 
     event NewAttendance(address participants, uint256 rewardAmount);
 
-<<<<<<< HEAD
+    TokenManager public tokenManager;
 
     function initialize(TokenManager _tokenManager) external onlyInit {
+        require(isContract(_tokenManager), ERROR_NOT_MANAGER);
+        tokenmanager = _tokenmanager;
         initialized();
     }
 
