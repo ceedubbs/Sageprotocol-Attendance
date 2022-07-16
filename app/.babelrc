@@ -15,7 +15,7 @@
         },
         "useBuiltIns": "entry",
         "corejs": 3,
-        "shippedProposals": true,
+        "shippedProposals": true
       }
     ]
   ],

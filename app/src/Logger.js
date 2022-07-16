@@ -10,13 +10,13 @@ import {
 } from '@aragon/ui'
 
 const AttendenceList = []
-2
+
 function LoggerView({ AttendenceList }) {
     const [addressValue, setAddressValue] = useState('')
     const [nameValue, setNameValue] = useState('')
     const [numValue, setNumValue] = useState(0)
     return (
-        //need to add split here (primary and secondary)
+
         <Split
             primary={
                 <><TextInput
@@ -38,7 +38,7 @@ function LoggerView({ AttendenceList }) {
                         mode="strong"
                         label="Add"
                         icon={<IconPlus />}
-                        onClick={addToList()} /><DataView
+                        onClick={addToList()} /><DataView //could add identity badge to make this look cooler
                         display="table"
                         fields={['Holder', 'Name']}
                         items={AttendenceList}
