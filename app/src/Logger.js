@@ -17,6 +17,7 @@ function LoggerView({ AttendenceList }) {
     const [numValue, setNumValue] = useState(0)
     return (
 // testing testing 小黄黄 potato
+yoingeer
         <Split
             primary={
                 <><TextInput
