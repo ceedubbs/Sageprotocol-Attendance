@@ -1,7 +1,7 @@
 //This should probably be the App.js file
 
 import React from 'react'
-import { Main, Header, Button, SidePanel } from '@aragon/ui'
+import { Main, Header, Button} from '@aragon/ui'
 
 import TokenInfoBox from './TokenInfoBox'
 import OwnershipDistributionBox from './OwnershipDistributionBox'
@@ -16,7 +16,7 @@ function App() {
         primary={
           <>
             Attendence
-            <Tag mode="identifier"> /*insert token abbreviation Capital Letters*/ </Tag>
+            <Tag mode="identifier"> /*insert token abbreviation Capital Letters*/ </Tag> 
           </>
         }
         />
