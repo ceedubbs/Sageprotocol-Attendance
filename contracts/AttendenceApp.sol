@@ -10,9 +10,7 @@ contract Attendance is AragonApp {
 
     string private constant ERROR_ADDRESS_INVALID = "INVALID ADDRESS";
     string private constant ERROR_NOT_MANAGER = "INVALID MANAGER ADDRESS";
-    string private constant ERROR_NO_ATTENDANCE_ROLE = "NO ATTENDANCE ROLE";git
-
-    event NewAttendance(address participant, uint256 rewardAmount);
+    string private constant ERROR_NO_ATTENDANCE_ROLE = "NO ATTENDANCE ROLE";
 
     address[] participantlist;
     TokenManager public tokenManager;
