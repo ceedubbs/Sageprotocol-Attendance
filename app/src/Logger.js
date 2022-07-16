@@ -38,7 +38,7 @@ function LoggerView({ AttendenceList }) {
                         mode="strong"
                         label="Add"
                         icon={<IconPlus />}
-                        onClick={addToList()} /><DataView //could add identity badge to make this look cooler
+                        onClick={addToList()} /><DataView
                         display="table"
                         fields={['Holder', 'Name']}
                         items={AttendenceList}
