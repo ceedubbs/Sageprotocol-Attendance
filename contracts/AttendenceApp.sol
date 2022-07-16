@@ -10,11 +10,11 @@ contract Attendance is AragonApp {
 
     string private constant ERROR_ADDRESS_INVALID = "INVALID ADDRESS";
     string private constant ERROR_NOT_MANAGER = "INVALID MANAGER ADDRESS";
-    string private constant ERROR_NO_ATTENDANCE_ROLE = "NO ATTENDANCE ROLE";
+    string private constant ERROR_NO_ATTENDANCE_ROLE = "NO ATTENDANCE ROLE";git
 
     event NewAttendance(address participant, uint256 rewardAmount);
 
-    address[] participantarr;
+    address[] participantlist;
     TokenManager public tokenManager;
 
     function initialize(TokenManager _tokenManager) external onlyInit {
@@ -32,7 +32,7 @@ contract Attendance is AragonApp {
         public
         addressValid(participant)
     {
-        participantarr.push(participant);
+        participantlist.push(participant);
     }
 
     function rewardTokens(address participant, uint256 rewardAmount)
@@ -40,6 +40,5 @@ contract Attendance is AragonApp {
         auth(ATTENDANCE_ROLE)
     {
         tokenManager.mint(participant[index], rewardAmount);
-        emit NewAttendance(participant[index], rewardAmount);
     }
 }
