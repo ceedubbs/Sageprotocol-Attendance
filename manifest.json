@@ -1,7 +1,7 @@
 {
   "name": "final-attendance",
-  "author": "Placeholder-author",
-  "description": "An application for Aragon",
+  "author": "Sage Protocol",
+  "description": "A basic app to track attendance of organization",
   "details_url": "/meta/details.md",
   "source_url": "https://<placeholder-repository-url>",
   "icons": [

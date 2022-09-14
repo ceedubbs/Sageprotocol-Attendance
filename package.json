@@ -1,7 +1,7 @@
 {
   "name": "final-attendance",
   "version": "0.0.1",
-  "description": "placeholder-app-description",
+  "description": "A basic app to track attendance of organization",
   "scripts": {
     "postinstall": "yarn compile && yarn build-app",
     "build-app": "cd app && npm install && cd ..",
