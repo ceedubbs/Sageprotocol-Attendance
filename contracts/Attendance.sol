@@ -1,4 +1,4 @@
-pragma solidity 0.8.15;
+pragma solidity 0.4.24;
 
 import "@aragon/os/contracts/apps/AragonApp.sol";
 import "@aragon/apps-token-manager/contracts/TokenManager.sol";
@@ -17,7 +17,7 @@ contract Attendance is AragonApp {
     
     function initialize(TokenManager _tokenManager) external onlyInit {
         require(isContract(_tokenManager), ERROR_NOT_MANAGER);
-        tokenmanager = TokenManager(_tokenmanager);
+        tokenManager = TokenManager(_tokenManager);
         initialized();
     }
     /**
@@ -28,11 +28,13 @@ contract Attendance is AragonApp {
         isInitialized
         auth(ATTENDANCE_ROLE)
     {
-        for(uint i = 0; i < participants.length: i++ ) {
-            require(isaddress(participants[i]) == true, ERROR_ADDRESS_INVALID);
+        for(uint i = 0; i < participants.length; i++ ) {
             require(rewardAmount > 0, ERROR_INVALID_REWARD_AMOUNT);
             tokenManager.mint(participants[i], rewardAmount);
         }
-        emit(msg.sender, participants, rewardAmount)
+        emit Submitted(msg.sender, participants, rewardAmount);
+    }
+    function callTokenManagerContract() external view returns(address) {
+        return tokenManager;
     }
 }

@@ -12,7 +12,6 @@ app.store(
 
     try {
       switch (event) {
-    
         case events.SYNC_STATUS_SYNCING:
           return { ...nextState, isSyncing: true }
         case events.SYNC_STATUS_SYNCED:
