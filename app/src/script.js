@@ -11,13 +11,8 @@ app.store(
     }
 
     try {
+      //still confused about events
       switch (event) {
-        case 'Increment':
-          return { ...nextState, count: await getValue() }
-        case 'Decrement':
-          return { ...nextState, count: await getValue() }
-        case 'Submit Attendence':
-          return { ...nextState, count: await getValue() }
         case events.SYNC_STATUS_SYNCING:
           return { ...nextState, isSyncing: true }
         case events.SYNC_STATUS_SYNCED:
@@ -34,21 +29,4 @@ app.store(
   }
 )
 
-/***********************
- *                     *
- *   Event Handlers    *
- *                     *
- ***********************/
 
-function initializeState() {
-  return async cachedState => {
-    return {
-      ...cachedState,
-      count: await getValue(),
-    }
-  }
-}
-
-async function getValue() {
-  return parseInt(await app.call('value').toPromise(), 10)
-}
