@@ -29,7 +29,7 @@ Navigate into the `Sageprotocol-Attendance` directory.
 ```sh
 cd Sageprotocol-Attendance
 ```
-Switch to node version 12.7.0
+Switch to node version 16.0.0
 
 Install npm dependencies.
 
